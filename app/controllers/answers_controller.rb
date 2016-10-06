@@ -13,13 +13,13 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @answer.question_id = @question.id
 
-      if @answer.save
-        flash[:notice] = "Answer has been saved"
-        redirect_to question_path(@question)
-      else
-        flash[:notice] = "Answer has not been saved"
-        render :'questions/show'
-      end
+    if @answer.save
+      flash[:notice] = "Answer has been saved"
+      redirect_to question_path(@question)
+    else
+      flash[:notice] = "Answer has not been saved"
+      render :'questions/show'
+    end
   end
 
   private
@@ -34,15 +34,3 @@ class AnswersController < ApplicationController
       end
     end
 end
-
-
-#questions_path
-
-
-#redirect start a completely new http request - It is a clean slate
-#render you keep the partial object in memory - this way you can view your current memory status
-
-#when you redirect you send to url when you render you send to a file ******
-
-#redirect_back fallback_location: proc { question(@question) }
-#add error messages flash error messages and redirect to @question
