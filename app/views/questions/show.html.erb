@@ -1,0 +1,37 @@
+<div>
+  <% if flash[:notice] %>
+    <h3><%= flash[:notice] %></h3>
+  <% end %>
+  <h2>  <%= "#{@question.title}" %></h2>
+  <li><%="#{@question.description}"%></li>
+
+</div>
+<p>
+  <% if @answers != nil %>
+    <% @answers.each do |answer| %>
+      <li><%= "#{answer.description}"%></li>
+    <% end %>
+  <% end %>
+</p>
+
+<%= form_for [@question, @answer] do |f| %>
+  <% if @answer.errors.any? %>
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved:</h2>
+
+      <ul>
+        <% @answer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :answer %><br>
+    <%= f.text_field :description%>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_question_path(@question) %> 
+<%= link_to 'Back', questions_path %>
+<%= link_to 'Delete', @question, method: :delete, data: {confirm: "Are you sure you want to delete this question?" } %>

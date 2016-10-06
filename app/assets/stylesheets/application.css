@@ -12,4 +12,85 @@
  *
  *= require_tree .
  *= require_self
- */
+
+
+ body {
+   background-color: #ccc;
+   font-family: sans-serif;
+   font-size: 13px;
+   line-height: 21px;
+   margin: 0;
+ }
+
+ #header-site {
+   background-color: #11111;
+   font-family: sans-serif;
+   font-size: 25px;
+   color: #fff;
+   display: block;
+   margin-top: -1px;
+   text-align: left;
+   padding: 4px;
+ }
+
+ .logo-name .login {
+   display: inline-block;
+ }
+/*
+ #header-site {
+   padding-top: 40px;
+   position: absolute;
+   padding: 20px 5vw 0;
+   z-index: 700;
+   text-align: center;
+   display: block;
+   /* what does z-index do
+
+ }
+
+  #header-site .header-content {
+    margin: auto;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+  }
+
+   #header-site .logo {
+     height: 24px;
+     text-align: left;
+     margin: 0px;
+   }
+
+   h1 {
+     font-size: 2em;
+     display: block;
+     font-weight: bold;
+   }
+
+   #header-site .logo-name {
+     color: transparent;
+   }
+
+   .login {
+     background-color: transparent;
+     color: #fff;
+   }
+   */
+
+   body {
+     margin: 0px;
+   }
+   .top-bar {
+     background-color: gray;
+     padding: 0px;
+   }
+   .logo {
+     display: inline-block;
+     margin-left: 10px;
+   }
+
+   .top-bar-right {
+     display: inline-block;
+     float: right;
+     margin: 10px;
+   }

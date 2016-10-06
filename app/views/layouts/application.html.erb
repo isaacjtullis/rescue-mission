@@ -6,9 +6,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
+    <header id="header-site" class="header">
+      <div class="top-bar">
+        <h1 class="logo">Loads of Q'a and boat loads of A's</h1>
+
+        <ul class="top-bar-right">
+          <% if current_user %>
+            <li>Signed in as <%= current_user.name %></li>
+            <li><%= link_to "Sign Out", signout_path %></li>
+          <% else %>
+            <li><%= link_to "Sign In", auth_github_path%></li>
+          <% end %>
+        </ul>
+    </div>
+    </header>
+    <div class="top-bar">
+
+    </div>
     <%= yield %>
   </body>
 </html>
